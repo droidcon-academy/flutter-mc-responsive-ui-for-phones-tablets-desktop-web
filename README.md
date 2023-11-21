@@ -1,2 +1,2 @@
 # Study materials and source code for **Droidcon Academy** course 
-> # Add Course Name 
+> # Flutter Responsive Split-Screen UI Designs for Phones, Tablets, Desktops, and the Web 
