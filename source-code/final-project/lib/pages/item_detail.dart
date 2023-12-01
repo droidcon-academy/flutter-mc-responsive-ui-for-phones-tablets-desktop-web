@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_split_screen/helpers/constants.dart';
-import 'package:responsive_split_screen/helpers/formatters.dart';
 import 'package:responsive_split_screen/helpers/themes.dart';
 import 'package:responsive_split_screen/models/carts_model.dart';
 import 'package:responsive_split_screen/state/item_state.dart';
+import 'package:responsive_split_screen/widgets/title_gradient_bar.dart';
 
 class ItemDetail extends StatefulWidget {
   const ItemDetail({super.key});
@@ -95,27 +95,9 @@ class _ItemDetailState extends State<ItemDetail> {
                             left: 0.0,
                             right: 0.0,
                             bottom: 0.0,
-                            child: DecoratedBox(
-                              decoration: const BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [
-                                    ThemeColors.gradientStart,
-                                    ThemeColors.gradientEnd,
-                                  ],
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter,
-                                ),
-                              ),
-                              child: Column(
-                                children: [
-                                  Text(itemSelected.products[index].title),
-                                  Text(
-                                    Format.toCurrency(
-                                      itemSelected.products[index].price,
-                                    ),
-                                  )
-                                ],
-                              ),
+                            child: TitleGradientBar(
+                              title: itemSelected.products[index].title,
+                              price: itemSelected.products[index].price,
                             ),
                           )
                         ],
