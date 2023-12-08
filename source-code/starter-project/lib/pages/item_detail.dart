@@ -13,12 +13,13 @@ class ItemDetail extends StatefulWidget {
 }
 
 class _ItemDetailState extends State<ItemDetail> {
-  late ItemState itemState = ItemState.of(context)!;
+  late ItemState _itemState;
   final ScrollController _scrollController = ScrollController();
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    _itemState = ItemState.of(context)!;
     // TIP: For Tablet, Desktop, and Web
     //      Scroll GridView to the Top when selected Item Changes
     if (_scrollController.hasClients) {
@@ -41,7 +42,7 @@ class _ItemDetailState extends State<ItemDetail> {
       //      left: false allows to use page content all the way to the left
       //      side of the List Page Split-Screen
       body: ValueListenableBuilder(
-        valueListenable: itemState.itemSelectedNotifier,
+        valueListenable: _itemState.itemSelectedNotifier,
         builder: (
           BuildContext context,
           Cart itemSelected,
